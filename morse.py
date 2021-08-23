@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 #Define window
 root = tkinter.Tk()
 root.title('Morse Code Translator')
-root.iconbitmap('Morse code translator/morse.ico')
+root.iconbitmap('morse.ico')
 root.geometry('500x350')
 root.resizable(0,0)
 
@@ -106,10 +106,10 @@ def play():
     #Play the tones (., -, " " , |)
     for value in text:
         if value == ".":
-            playsound('Morse code translator/dot.mp3')
+            playsound('dot.mp3')
             root.after(100)
         elif value == "-":
-            playsound('Morse code translator/dash.mp3')
+            playsound('dash.mp3')
             root.after(200)
         elif value == " ":
             root.after(300)
@@ -127,12 +127,12 @@ def show_guide():
     #Create second window relative to the root window
     guide = tkinter.Toplevel()
     guide.title("Morse Guide")
-    guide.iconbitmap('Morse code translator/morse.ico')
+    guide.iconbitmap('morse.ico')
     guide.geometry('350x350+'+ str(root.winfo_x()+500) + "+" + str(root.winfo_y()))
     guide.config(bg=root_color)
 
     #Create the image, label, and pack
-    morse = ImageTk.PhotoImage(Image.open('Morse code translator/morse_chart.jpg'))
+    morse = ImageTk.PhotoImage(Image.open('morse_chart.jpg'))
     label = tkinter.Label(guide, image=morse, bg=frame_color)
     label.pack(padx=10, pady=10, ipadx=5, ipady=5)
 
